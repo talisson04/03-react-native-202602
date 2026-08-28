@@ -7,6 +7,14 @@ export default function TelaDaListaDeTarefas() {
   const [tarefas, setTarefas] = useState<Tarefa[]>([]);
   const [carregando, setCarregando] = useState(true);
 
+  /* Este trecho simula um carregamento de dados.
+   * Após 3 segundos, ele:
+   * - Copia as tarefas simuladas (tarefasMockadas) para o "estado" tarefas.
+   * - Altera o "estado" carregando para false.
+   * - Faz a tela deixar de exibir o carregamento e mostrar a FlatList.
+   * O timer armazena a referência do temporizador, que depois é cancelado pelo   
+   * clearTimeout(timer) caso o componente seja desmontado antes dos 3 segundos.
+   */
   useEffect(() => {
     const timer = setTimeout(() => {
       setTarefas(tarefasMockadas);
@@ -42,5 +50,3 @@ const styles = StyleSheet.create({
   indicador: { marginTop: 12 },
   item: { paddingVertical: 8, fontSize: 16 },
 });
-
-
