@@ -42,3 +42,5 @@ const styles = StyleSheet.create({
   indicador: { marginTop: 12 },
   item: { paddingVertical: 8, fontSize: 16 },
 });
+
+
